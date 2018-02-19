@@ -80,7 +80,6 @@ begin
     #Filter next URL
     url = filter(data, '$..link[?(@._rel=="next")]._href').first || nil
     log("Converted in #{((Time.now - timing_start) * 1000).to_i} ms")
-    break;
   end
 ensure
   log("Counted #{counter} records")
