@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OAI-PMH xmlns="http://www.openarchives.org/OAI/2.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/ http://www.openarchives.org/OAI/2.0/OAI-PMH.xsd">
+  <%=print data, :response_date%>
+  <request>LIRIAS</request>
+  <ListRecords>
+    <record>
+      <header>
+        <identifier><%=data[:id].first%></identifier>
+        <datestamp><%=data[:updated].first %></datestamp>
+      </header>
+      <metadata>
+        <record id="<%=data[:id].first %>">
+          <%=print data, :id%>
+          <%=print data, :original_id%>
+          <%=print data, :source%>
+          <%=print data, :title %>
+          <%=print data, :abstract%>
+          <% if data[:author] %>
+          <authors>
+            <% data[:author].each do |author| %>
+              <author>
+                <name><%= author.with_indifferent_access[:first_names] %> <%= author.with_indifferent_access[:initials] %> <%= author.with_indifferent_access[:last_name] %></name>
+                <%= print author, :first_names %>
+                <%= print author, :last_name %>
+                <%= print author, :initials %>
+              </author>
+            <% end %>
+          </authors>
+          <% end %>
+          <%=print data, :author_url, :resource_url%>
+          <% if data[:editor] %>
+            <editors>
+              <%= print data, :editor%>
+            </editors>
+          <% end %>
+          <%=print(data, :serie)%>
+          <%=print(data, :edition)%>
+          <%=print(data, :volume)%>
+          <% if data[:pagination] %>
+            <paginations>
+              <% data[:pagination].each do |pagination| %>
+                <pagination><%= pagination.with_indifferent_access[:begin_page] %> - <%= pagination.with_indifferent_access[:end_page] %></pagination>
+                <%=print(pagination, :begin_page)%>
+                <%=print(pagination, :end_page)%>
+              <% end %>
+            </paginations>
+          <% end %>
+          <%=print(data, :publisher)%>
+          <%=print(data, :publisher_url)%>
+          <%=print(data, :place_of_publication)%>
+          <%=print(data, :publication_date)%>
+          <%if ([:isbn_10, :isbn_13, :doi, :issn, :eissn, :external_identifiers] - data.keys).length <= 5%>
+            <identifiers>
+            <%=print(data, :isbn_10)%>
+            <%=print(data, :isbn_13)%>
+            <%=print(data, :doi)%>
+            <%=print(data, :issn)%>
+            <%=print(data, :eissn)%>
+            <%=print(data, :external_identifiers)%>
+            </identifiers>
+          <%end%>
+          <%=print(data, :medium)%>
+          <%=print(data, :publication_status)%>
+          <%if data[:keyword]%>
+          <keywords>
+          <%=print data, :keyword%>
+          </keywords>
+          <%end%>
+          <%=print data, :note%>
+          <%=print data, :number%>
+          <%=print data, :parent_title%>
+          <%if data[:name_of_conference]%>
+          <conference>
+          <%=print data, :name_of_conference, :name%>
+          <%=print data, :location%>
+          <%=print data, :start_date%>
+          <%=print data, :finish_date%>
+          </conference>
+          <%end%>
+          <%=print data, :journal%>
+          <%=print data, :issue%>
+          <%=print data, :pii, :publisher_identifier%>
+          <%=print data, :language%>
+          <%=print data, :patent_number%>
+          <%=print data, :associated_authors%>
+          <%=print data, :filed_date%>
+          <%=print data, :patent_status%>
+          <%=print data, :commissioning_body%>
+          <%=print data, :confidential%>
+          <%=print data, :number_of_pieces%>
+          <%=print data, :version%>
+          <%=print data, :funding_acknowledgements%>
+        </record>
+      </metadata>
+    </record>
+  </ListRecords>
+</OAI-PMH>
