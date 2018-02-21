@@ -1,6 +1,8 @@
 $LOAD_PATH << '.' << './lib'
 require 'lib/data_collect'
 
+Dir.mkdir("./records") unless Dir.exists?('./records')
+
 Dir.glob('./records/*.xml') do |f|
   File.unlink(f)
 end

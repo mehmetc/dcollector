@@ -67,6 +67,8 @@ class DataCollect
     @output ||= Output.new
   end
 
+  # evaluator http://jsonpath.com/
+  # uitleg http://goessner.net/articles/JsonPath/index.html
   def filter(data, filter_path)
     filtered = []
     if filter_path.is_a?(Array) && data.is_a?(Array)
