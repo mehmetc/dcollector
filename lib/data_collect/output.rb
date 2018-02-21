@@ -79,7 +79,7 @@ class Output
 
 
   def to_file(erb_file, tar_file_name = nil)
-    id = data[:id].first || 'unknown'
+    id = data[:id].first rescue 'unknown'
     result = to_s(erb_file)
 
     xml_result = Nokogiri::XML(result) do |config|

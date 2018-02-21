@@ -11,6 +11,8 @@ require 'mime/types'
 require 'active_support/core_ext/hash'
 
 class Input
+  attr_reader :raw
+
   def initialize
     @logger = Logger.new(STDOUT)
   end
@@ -60,7 +62,7 @@ class Input
     nori = Nori.new(parser: :nokogiri, strip_namespaces: true, convert_tags_to: lambda {|tag| tag.gsub(/^@/, '_')})
     case http_response.code
       when 200
-        data = http_response.body.to_s
+        @raw = data = http_response.body.to_s
 
         # File.open("#{rand(1000)}.xml", 'wb') do |f|
         #   f.puts data
@@ -68,16 +70,18 @@ class Input
 
         file_type = file_type_from(http_response.headers)
 
-        case file_type
-          when 'applicaton/json'
-            data = JSON.parse(data)
-          when 'application/atom+xml'
-            data = JSON.parse(nori.parse(data).to_json)
-          when 'application/xml'
-          when 'text/xml'
-            data = JSON.parse(nori.parse(data).to_json)
-          else
-            data = JSON.parse(nori.parse(data).to_json)
+        unless options.with_indifferent_access.has_key?(:raw) && options.with_indifferent_access[:raw] == true
+          case file_type
+            when 'applicaton/json'
+              data = JSON.parse(data)
+            when 'application/atom+xml'
+              data = JSON.parse(nori.parse(data).to_json)
+            when 'application/xml'
+            when 'text/xml'
+              data = JSON.parse(nori.parse(data).to_json)
+            else
+              data = JSON.parse(nori.parse(data).to_json)
+          end
         end
       when 401
         raise 'Unauthorized'
@@ -93,15 +97,17 @@ class Input
   def from_file(uri, options = {})
     data = nil
     absolute_path = File.absolute_path("#{uri.host}#{uri.path}")
-    case File.extname(absolute_path)
-      when '.json'
-        data = JSON.parse(File.read("#{absolute_path}"))
-      when '.xml'
-        nori = Nori.new(parser: :nokogiri, strip_namespaces: true, convert_tags_to: lambda {|tag| tag.gsub(/^@/, '_')})
-        file = File.read("#{absolute_path}")
-        data = JSON.parse(nori.parse(file).to_json)
-      else
-        raise "Do not know how to process #{uri.to_s}"
+    unless options.has_key?('raw') && options['raw'] == true
+      @raw = data = File.read("#{absolute_path}")
+      case File.extname(absolute_path)
+        when '.json'
+          data = JSON.parse(data)
+        when '.xml'
+          nori = Nori.new(parser: :nokogiri, strip_namespaces: true, convert_tags_to: lambda {|tag| tag.gsub(/^@/, '_')})
+          data = JSON.parse(nori.parse(data).to_json)
+        else
+          raise "Do not know how to process #{uri.to_s}"
+      end
     end
 
     data
