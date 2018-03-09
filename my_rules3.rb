@@ -1,4 +1,5 @@
 begin
+  counter = 0
   timing_start = Time.now
   data = input.from_uri("file://mock.xml", {})
   log("Data loaded in #{((Time.now - timing_start) * 1000).to_i} ms")
@@ -13,7 +14,8 @@ begin
     output[:keyword] = filter(object, '$..keywords.keyword').each {|d|
       #require 'debug'
 
-      if d.methods.include?(:attributes)
+      #if d.methods.include?(:attributes)
+      if d.is_a?(Nori::StringWithAttributes)
         puts d.attributes.to_json
       end
 
