@@ -10,6 +10,8 @@ require 'cgi'
 require 'mime/types'
 require 'active_support/core_ext/hash'
 
+#require_relative 'ext/xml_utility_node'
+
 class Input
   attr_reader :raw
 
@@ -59,7 +61,6 @@ class Input
     user = options[:user]
     password = options[:password]
     http_response = HTTP.basic_auth(user: user, pass: password).get(escape_uri(uri))
-    nori = Nori.new(parser: :nokogiri, strip_namespaces: true, convert_tags_to: lambda {|tag| tag.gsub(/^@/, '_')})
     case http_response.code
       when 200
         @raw = data = http_response.body.to_s
@@ -75,12 +76,12 @@ class Input
             when 'applicaton/json'
               data = JSON.parse(data)
             when 'application/atom+xml'
-              data = JSON.parse(nori.parse(data).to_json)
+              data = xml_to_hash(data)
             when 'application/xml'
             when 'text/xml'
-              data = JSON.parse(nori.parse(data).to_json)
+                          data = xml_to_hash(data)
             else
-              data = JSON.parse(nori.parse(data).to_json)
+              data = xml_to_hash(data)
           end
         end
       when 401
@@ -103,8 +104,7 @@ class Input
         when '.json'
           data = JSON.parse(data)
         when '.xml'
-          nori = Nori.new(parser: :nokogiri, strip_namespaces: true, convert_tags_to: lambda {|tag| tag.gsub(/^@/, '_')})
-          data = JSON.parse(nori.parse(data).to_json)
+          data = xml_to_hash(data)
         else
           raise "Do not know how to process #{uri.to_s}"
       end
@@ -114,6 +114,12 @@ class Input
   end
 
   private
+  def xml_to_hash(data)
+    nori = Nori.new(parser: :nokogiri, strip_namespaces: true, convert_tags_to: lambda {|tag| tag.gsub(/^@/, '_')})
+    nori.parse(data)
+    #JSON.parse(nori.parse(data).to_json)
+  end
+
   def escape_uri(uri)
     #"#{uri.to_s.gsub(uri.query, '')}#{CGI.escape(CGI.unescape(uri.query))}"
     uri.to_s
