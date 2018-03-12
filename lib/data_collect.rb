@@ -11,6 +11,7 @@ class DataCollect
   attr_reader :input, :output
 
   def initialize
+    Encoding.default_external = "UTF-8"
     @logger = Logger.new(STDOUT)
   end
 

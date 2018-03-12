@@ -1,3 +1,4 @@
+#encoding: UTF-8
 $LOAD_PATH << '.' << './lib'
 require 'lib/data_collect'
 

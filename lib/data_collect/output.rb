@@ -82,20 +82,20 @@ class Output
     id = data[:id].first rescue 'unknown'
     result = to_s(erb_file)
 
-    xml_result = Nokogiri::XML(result) do |config|
+    xml_result = Nokogiri::XML(result, nil, 'UTF-8') do |config|
       config.noblanks
     end
 
     if tar_file_name.nil?
       file_name = "records/#{id}_#{rand(1000)}.xml"
-      File.open(file_name, 'wb') do |f|
+      File.open(file_name, 'wb:UTF-8') do |f|
         f.puts xml_result.to_xml
       end
 
       return file_name
     else
 
-      Minitar::Output.open(Zlib::GzipWriter.new(File.open("records/#{tar_file_name}", 'wb'))) do |f|
+      Minitar::Output.open(Zlib::GzipWriter.new(File.open("records/#{tar_file_name}", 'wb:UTF-8'))) do |f|
         xml_data = xml_result.to_xml
         f.tar.add_file_simple("#{id}_#{rand(1000)}.xml", data: xml_data, size: xml_data.size, mtime: Time.now.to_i)
       end
