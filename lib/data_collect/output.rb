@@ -4,6 +4,7 @@ require 'erb'
 require 'date'
 require 'minitar'
 require 'zlib'
+require 'cgi'
 require 'active_support/core_ext/hash'
 
 class Output
@@ -46,7 +47,7 @@ class Output
         if data.with_indifferent_access[symbol].is_a?(Array)
           r = []
           data.with_indifferent_access[symbol].each do |d|
-            r << "<#{tag}>#{d}</#{tag}>"
+            r << "<#{tag}>#{CGI.escapeHTML(d)}</#{tag}>"
           end
           r.join("\n")
         elsif data.with_indifferent_access[symbol].is_a?(Hash)
@@ -58,7 +59,7 @@ class Output
           r << "</#{tag}>"
           r.join("\n")
         else
-          "<#{tag}>#{data.with_indifferent_access[symbol]}</#{tag}>"
+          "<#{tag}>#{CGI.escapeHTML(data.with_indifferent_access[symbol])}</#{tag}>"
         end
       else
         nil

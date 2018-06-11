@@ -3,7 +3,8 @@ from_date = CGI.escape(DateTime.parse(config[:last_run]).xmlschema)
 
 begin
 #Create starting URL
-  url = "#{config[:base_url]}#{from_date}"
+  url = "#{config[:base_url]}/1600776"
+  #url = "#{config[:base_url]}#{from_date}"
   options = {user: config[:user], password: config[:password]}
   counter = 0
 
@@ -15,7 +16,7 @@ begin
 
     timing_start = Time.now
     #Filter on Object
-    filter(data, '$..entry[*].object').each do |object|
+    filter(data, '$..entry.object').each do |object|
 
       output[:id] = filter(object, '@._id')
       output[:updated] = filter(object, '@._last_affected_when')
@@ -73,11 +74,13 @@ begin
       end
 
       #Save to file using an ERB template
-      output.to_file("test.erb", "#{Time.now.to_i}.tar.gz")
+      output.to_file("test.erb")
+      #output.to_file("test.erb", "#{Time.now.to_i}.tar.gz")
       counter += 1
     end
 
     #Filter next URL
+    #require 'debug'
     url = filter(data, '$..link[?(@._rel=="next")]._href').first || nil
     log("Converted in #{((Time.now - timing_start) * 1000).to_i} ms")
   end
