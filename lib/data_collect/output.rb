@@ -56,7 +56,7 @@ class Output
         if data.with_indifferent_access[symbol].is_a?(Array)
           r = []
           data.with_indifferent_access[symbol].each do |d|
-            r << "<#{tag}>#{CGI.escapeHTML(d)}</#{tag}>"
+            r << "<#{tag}>#{CGI.escapeHTML(d.to_s)}</#{tag}>"
           end
           r.join("\n")
         elsif data.with_indifferent_access[symbol].is_a?(Hash)
@@ -68,7 +68,7 @@ class Output
           r << "</#{tag}>"
           r.join("\n")
         else
-          "<#{tag}>#{CGI.escapeHTML(data.with_indifferent_access[symbol])}</#{tag}>"
+          "<#{tag}>#{CGI.escapeHTML(data.with_indifferent_access[symbol].to_s)}</#{tag}>"
         end
       else
         nil
