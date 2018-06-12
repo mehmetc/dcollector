@@ -13,6 +13,7 @@ config.yml
 /test/tmp/
 /test/version_tmp/
 /tmp/
+/records/
 
 # Used by dotenv library to load environment variables.
 # .env

@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OAI-PMH xmlns="http://www.openarchives.org/OAI/2.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/ http://www.openarchives.org/OAI/2.0/OAI-PMH.xsd">
+  <%=print data, :response_date%>
+  <request>LIRIAS</request>
+  <ListRecords>
+    <record>
+      <header>
+        <identifier><%=data[:id].first%></identifier>
+        <datestamp><%=data[:updated].first %></datestamp>
+      </header>
+      <metadata>
+        <record id="<%=data[:id].first %>">
+          <%=print data, :id%>
+          <%=print data, :type%>
+          <%=print data, :original_id%>
+          <%=print data, :source%>
+          <%=print data, :title%>
+          <%=print data, :alternative_title %>
+          <%=print data, :abstract%>
+
+          <% personTypes = [
+            :author, 
+            :editor,
+            :supervisor,
+            :co_supervisor,
+            :contributor
+           ]
+           personTypes.each do |personType| 
+            %>
+            <% if data.has_key?(personType) %>
+             <<%= personType %>s>
+               <% data[personType].each do |person| %>
+                <<%= personType %>>
+                  <%= ERB.new(IO.read('templates/lirias_pre_pnx_person_template.erb'), nil, nil, '_author').result(binding) %>
+                </<%= personType %>>
+               <% end %>
+             </<%= personType %>>
+           <% end %>
+         <% end  %>
+
+
+          <% author_functions = [
+            :actor, 
+            :architect,
+            :choreographer,
+            :cinematographer,
+            :composer,
+            :conductor,
+            :curator,
+            :director,
+            :editor_c,
+            :educator,
+            :interaction,
+            :interior_architect,
+            :game_designer,
+            :graphic_designer,
+            :landscape_architect,
+            :music_performer,
+            :otherrole,
+            :photographer,
+            :producer,
+            :product_designer,
+            :sound_artist,
+            :urban_designer,
+            :visual_artist,
+            :writer 
+           ]
+           author_functions.each do |author_function| 
+            %>
+              <% if data.has_key?(author_function) %>
+               <<%= author_function %>s>
+                 <% data[author_function].each do |person| %>
+                  <<%= author_function %>>
+                    <%= ERB.new(IO.read('templates/lirias_pre_pnx_person_template.erb'), nil, nil, '_author').result(binding) %>
+                  </<%= author_function %>>
+                 <% end %>
+               </<%= author_function %>>
+             <% end %>
+           <% end  %>
+
+
+
+          <%=print(data, :serie)%>
+          <%=print(data, :edition)%>
+          <%=print(data, :volume)%>
+          <%=print data, :issue%>
+          <% if data.has_key?(:pagination) %>
+            <paginations>
+              <% data[:pagination].each do |pagination| %>
+                <pagination><%= pagination.with_indifferent_access[:begin_page] %> - <%= pagination.with_indifferent_access[:end_page] %></pagination>
+                <%=print(pagination, :begin_page)%>
+                <%=print(pagination, :end_page)%>
+              <% end %>
+            </paginations>
+          <% end %>
+
+          <%=print(data, :number_of_pages)%>
+
+          <%=print(data, :publisher)%>
+          <%=print(data, :place_of_publication)%>
+          <%=print(data, :publication_date)%>
+          <%=print(data, :online_publication_date)%>
+          
+          <identifiers>
+            <%=print(data, :isbn_10)%>
+            <%=print(data, :isbn_13)%>
+            <%=print(data, :doi)%>
+            <%=print(data, :issn)%>
+            <%=print(data, :eissn)%>
+            <%=print(data, :pmid)%>
+            <%=print(data, :wosid)%>
+            <%=print(data, :scopusid)%>
+            <%if ([:external_identifiers] - data.keys).length <= 1 %>
+              <%=print(data, :external_identifiers)%>
+            <%end%>
+          </identifiers>
+          
+          <%=print(data, :medium)%>
+          <%=print(data, :publication_status)%>
+          <%if data.has_key?(:keyword)%>
+          <keywords>
+          <%=print data, :keyword%>
+          </keywords>
+          <%end%>
+          <%=print data, :note%>
+          <%=print data, :numbers%>
+          <%=print data, :chapter_number%>
+          <%=print data, :abstract_number%>
+          <%=print data, :report_number%>
+          <%=print data, :paper_number%>
+          <%=print data, :article_number%>
+
+
+          <%=print data, :parent_title%>
+          <%if data.has_key?(:name_of_conference) %>
+          <conference>
+          <%=print data, :name_of_conference, :name%>
+          <%=print data, :location%>
+          <%=print data, :start_date%>
+          <%=print data, :finish_date%>
+          </conference>
+          <%end%>
+          <%=print data, :journal%>
+
+          <%=print data, :pii, :publisher_identifier%>
+          
+         
+          <%=print data, :language%>
+          <%=print data, :patent_number%>
+          <%=print data, :associated_authors%>
+          <%=print data, :filed_date%>
+          <%=print data, :patent_status%>
+          <%=print data, :commissioning_body%>
+          <%=print data, :confidential%>
+          <%=print data, :number_of_pieces%>
+          <%=print data, :version%>
+          <%=print data, :funding_acknowledgements%>
+          <%=print data, :peer_reviewed%>
+          <%=print data, :professional_oriented%>
+          <%=print data, :vabb_type%>
+          <%=print data, :vabb_identifier%>
+          <%=print data, :historic_collection%>
+          <%=print data, :public_url%>
+          <%=print data, :virtual_collections%>
+          <%=print data, :organizational_unit%>
+          
+          <%=print data, :venue_designart %>
+
+          <%=print data, :additional_identifier%>
+
+          <%=print(data, :publisher_url)%>
+
+          <% if data.has_key?(:files) %>
+            <files>
+            <% data[:files].each do |file| %>
+              <file>
+                <%= print file, :embargo_release_date %>
+                <%= print file, :embargo_description %>
+
+                <fileOpenAccess><%= file["fileOpenAccess"] %></fileOpenAccess>
+                <public_access><%= file["filePublic"] %></public_access>
+                <intranet_access><%= file["fileIntranet"] %></intranet_access>
+
+                <%= print file, :filename %>
+                <%= print file, :description %>
+
+                <% if file["filePublic"] %>
+                  <% if file.has_key?("description") && file["description"].present?  %>
+                    <file_url>$$U<%= file.with_indifferent_access[:file_url] %>$$D<%= file.with_indifferent_access[:description] %> [freely available]</file_url>
+                  <% else %>
+                    <file_url>$$U<%= file.with_indifferent_access[:file_url] %>$$DDocument freely available</file_url>
+                  <% end %>    
+                <% else %>
+                  <% if file["fileIntranet"] %>
+                  <% if file.has_key?("description") && file["description"].present?  %>
+                    <file_url>$$U<%= file.with_indifferent_access[:file_url] %>$$D<%= file.with_indifferent_access[:description] %> [Available for KU Leuven users]</file_url>
+                  <% else %>
+                    <file_url>$$U<%= file.with_indifferent_access[:file_url] %>$$DAvailable for KU Leuven users</file_url>
+                  <% end %>  
+                  <% end %>  
+                <% end %>    
+                
+              </file>
+            <% end %>
+            </files>
+          <% end %>
+        </record>
+      </metadata>
+    </record>
+  </ListRecords>
+</OAI-PMH>

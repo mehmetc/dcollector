@@ -14,7 +14,6 @@ class Output
 
   def initialize(data = {})
     @data = data
-    @logger = Logger.new(STDOUT)
   end
 
   def each
@@ -69,7 +68,7 @@ class Output
           r << "</#{tag}>"
           r.join("\n")
         else
-          "<#{tag}>#{CGI.escapeHTML( data.with_indifferent_access[symbol] )}</#{tag}>"
+          "<#{tag}>#{CGI.escapeHTML(data.with_indifferent_access[symbol])}</#{tag}>"
         end
       else
         nil
