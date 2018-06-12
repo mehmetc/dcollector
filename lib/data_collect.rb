@@ -63,7 +63,8 @@ class DataCollect
   # output.to_file("test.erb")
   # Into a tar file stored in data
   # output.to_file("test.erb", "my_data.tar.gz")
-  #
+  # Into a temp directory 
+  # output.to_tmp_file("test.erb","directory")
   def output
     @output ||= Output.new
   end
