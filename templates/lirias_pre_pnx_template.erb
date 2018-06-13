@@ -188,14 +188,14 @@
                   <% if file.has_key?("description") && file["description"].present?  %>
                     <file_url>$$U<%= file.with_indifferent_access[:file_url] %>$$D<%= file.with_indifferent_access[:description] %> [freely available]</file_url>
                   <% else %>
-                    <file_url>$$U<%= file.with_indifferent_access[:file_url] %>$$DDocument freely available</file_url>
+                    <file_url>$$U<%= file.with_indifferent_access[:file_url] %>$$D<%= file.with_indifferent_access[:filename] %> [freely available]</file_url>
                   <% end %>    
                 <% else %>
                   <% if file["fileIntranet"] %>
                   <% if file.has_key?("description") && file["description"].present?  %>
                     <file_url>$$U<%= file.with_indifferent_access[:file_url] %>$$D<%= file.with_indifferent_access[:description] %> [Available for KU Leuven users]</file_url>
                   <% else %>
-                    <file_url>$$U<%= file.with_indifferent_access[:file_url] %>$$DAvailable for KU Leuven users</file_url>
+                    <file_url>$$U<%= file.with_indifferent_access[:file_url] %>$$D<%= file.with_indifferent_access[:filename] %> [Available for KU Leuven users]</file_url>
                   <% end %>  
                   <% end %>  
                 <% end %>    

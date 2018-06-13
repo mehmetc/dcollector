@@ -16,21 +16,18 @@ begin
   counter = 0
   updated_records = 0
   max_updated_records = 500000
-  max_updated_records = 10
+  #max_updated_records = 10
   deleted_records = 0
   max_deleted_records = 50000
-  max_deleted_records = 5
-
+  #max_deleted_records = 5
 
   #url = 'file://10_mockup.xml'
 
   # More about jsonpath
   #https://www.pluralsight.com/blog/tutorials/introduction-to-jsonpath
-
-  #url = "https://lirias2test.libis.kuleuven.be/elements-cache/rest/publications?per-page=10&affected-since=2018-03-14T20%3A44%3A14%2B01%3A00"
-
   log("Get Data affected-since #{from_date} ")
     
+
   while url
     timing_start = Time.now
     #Load data
@@ -51,6 +48,7 @@ begin
       output[:updated] = filter(object, '@._last_affected_when')
       
       last_affected_when = output[:updated][0]
+
       #results are sorted by last_affected_when
 
       #log(" record id #{ output[:id] } ")
@@ -103,7 +101,9 @@ begin
         output[:publisher] = filter(record, '$..native.field[?(@._name=="publisher")].text')
         output[:publisher_url] = filter(record, '$..native.field[?(@._name=="publisher-url")].text')
         output[:place_of_publication] = filter(record, '$..native.field[?(@._name=="place-of-publication")].text')
-        output[:publication_date] = filter(record, '$..native.field[?(@._name=="publication-date")].date').map {|d| DateTime.parse("#{d['year']}-#{d['month'] || '1'}-#{d['day'] || '1'}  ").strftime("%Y-%m-%d")} 
+        output[:publication_date] = filter(record, '$..native.field[?(@._name=="publication-date")].date').map {
+          |d| DateTime.parse("#{d['year']}-#{d['month'] || '1'}-#{d['day'] || '1'}  ").strftime("%Y-%m-%d")
+        } 
         output[:online_publication_date] = filter(record, '$..native.field[?(@._name=="online-publication-date")].date').map {
           |d| DateTime.parse("#{d['year']}-#{d['month'] || '1'}-#{d['day'] || '1'}  ").strftime("%Y-%m-%d")
         } 
@@ -127,14 +127,17 @@ begin
           |d| DateTime.parse("#{d['year']}-#{d['month'] || '1'}-#{d['day'] || '1'}  ").strftime("%Y-%m-%d")
         } 
         output[:finish_date] = filter(record, '$..native.field[?(@._name=="finish-date")].date').map {
-          |d| DateTime.parse("#{d['year']}-#{d['month'] || '1' }-#{d['day'] || '1'}  ").strftime("%Y-%m-%d")} 
+          |d| DateTime.parse("#{d['year']}-#{d['month'] || '1' }-#{d['day'] || '1'}  ").strftime("%Y-%m-%d")
+        } 
         output[:journal] = filter(record, '$..native.field[?(@._name=="journal")].text')
         output[:issn] = filter(record, '$..native.field[?(@._name=="issn")].text')
         output[:pii] = filter(record, '$..native.field[?(@._name=="pii")].text')
         output[:language] = filter(record, '$..native.field[?(@._name=="language")].text')
         output[:patent_number] = filter(record, '$..native.field[?(@._name=="patent-number")].text')
         output[:associated_authors] = filter(filter(record, '$..native.field[?(@._name=="associated-authors")].people.person'), [:first_names, :last_name, :initials])
-        output[:filed_date] = filter(record, '$..native.field[?(@._name=="filed-date")].date').map {|d| DateTime.parse("#{d['year']}-#{d['month']}-#{d['day'] || '1'}  ").strftime("%Y-%m-%d")} 
+        output[:filed_date] = filter(record, '$..native.field[?(@._name=="filed-date")].date').map {
+          |d| DateTime.parse("#{d['year']}-#{d['month'] || '1' }-#{d['day'] || '1'}  ").strftime("%Y-%m-%d")
+        } 
         output[:patent_status] = filter(record, '$..native.field[?(@._name=="patent-status")].text')
         output[:commissioning_body] = filter(record, '$..native.field[?(@._name=="commissioning-body")].text')
         output[:confidential] = filter(record, '$..native.field[?(@._name=="confidential")].boolean').map(&:to_s)
@@ -279,9 +282,6 @@ begin
     log(" last_affected_when #{ last_affected_when } ")
     log(" records created #{ updated_records } ")
 
-    #update config with the new data
-    config[:last_run_updates] = last_affected_when
-
     if updated_records > 0
       tarfilename = "lirias_#{Time.now.to_i}.tar.gz"
       c_dir = Dir.pwd
@@ -295,13 +295,15 @@ begin
     # DEZE LIJNEN ACTIVEREN VOOR DE JSON INPUT VOOR DE RESOLVER
       output.to_jsonfile(resolver_data, "lirias_resolver_data")
     # output.to_jsonfile(resolver_authors, "lirias_resolver_author")
-
-    #  mv_resp = `mv ./#{tmp_records_dir}/*.xml ./pre_pnx_temp`
+      #mv_resp = `mv ./#{records_dir}/*.xml ./pre_pnx_temp`
       mv_resp = `rm -r ./#{tmp_records_dir}`
       if $?.exitstatus != 0
           log("ERROR removing tmp_records_dir #{tmp_records_dir}")
       end
     end
+    #update config with the new data
+    log(" update  config[:last_run_updates] with #{ last_affected_when } ")
+    config[:last_run_updates] = last_affected_when
 
     #Filter next URL
     url = filter(data, '$..link[?(@._rel=="next")]._href').first || nil
@@ -315,9 +317,6 @@ begin
   log("Get Deleted affected-since #{from_date_deleted} ")  
   
   counter = 0
-
-
-#url_delete = "https://lirias2test.libis.kuleuven.be/elements-cache/rest/deleted/publications?per-page=1000&deleted-since=2018-04-24T13%3A14%3A06%2B00%3A00"
 
   while url_delete
     timing_start = Time.now
@@ -355,9 +354,6 @@ begin
    
     output.to_jsonfile(resolver_data_lirias_records, "lirias_resolver_deleted_data")
 
-    #update config with the new data
-    config[:last_run_deletes] = deleted_when
-
     if deleted_records > 0
       tarfilename = "lirias_deleted_#{Time.now.to_i}.tar.gz"
       c_dir = Dir.pwd
@@ -369,13 +365,16 @@ begin
           log("ERROR in creating tar.gz")
         end
 
-       # mv_resp = `mv ./#{tmp_records_dir}/*.xml ./pre_pnx_temp`
         rm_resp = `rm -r ./#{tmp_records_dir}`
         if $?.exitstatus != 0
             log("ERROR removing tmp_records_dir #{tmp_records_dir}")
         end
       end
     end
+
+    #update config with the new data
+    log("update config[:last_run_delete] with #{ last_affected_when } ")
+    config[:last_run_deletes] = deleted_when
 
     url_delete = filter(data, '$..link[?(@._rel=="next")]._href').first || nil
 
@@ -388,5 +387,4 @@ begin
 ensure
   log("Counted #{updated_records} updated records")
   log("Counted #{deleted_records} deleted records")
-  # config[:last_run_updates] = Time.now.xmlschema
 end
