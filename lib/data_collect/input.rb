@@ -79,7 +79,7 @@ class Input
               data = xml_to_hash(data)
             when 'application/xml'
             when 'text/xml'
-                          data = xml_to_hash(data)
+              data = xml_to_hash(data)
             else
               data = xml_to_hash(data)
           end

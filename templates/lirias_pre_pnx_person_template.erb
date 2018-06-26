@@ -1,5 +1,5 @@
 
-  <name><%= person.with_indifferent_access[:last_name] %>, <%= person.with_indifferent_access[:first_names] %></name>
+  <name><%= no_tag_print person, :last_name %>, <%=  no_tag_print person, :first_names %></name>
   <%= print person, :first_names %>
   <%= print person, :last_name %>
   <%= print person, :initials %>
@@ -13,19 +13,19 @@
     </functions>
     
     <pnx_display_name>
-    <%= person.with_indifferent_access[:last_name] %>, <%= person.with_indifferent_access[:first_names] %> (<%= person["function"].join(',') %>) 
-    $$Q <%= person.with_indifferent_access[:last_name] %>, <%= person.with_indifferent_access[:first_names] %>
+    <%=  no_tag_print person, :last_name %>, <%=  no_tag_print person, :first_names %> (<%= person["function"].join(',') %>) 
+    $$Q <%=  no_tag_print person, :last_name %>, <%=  no_tag_print person, :first_names %>
     </pnx_display_name>
  
   <% else %>    
-      <pnx_display_name><%= person.with_indifferent_access[:last_name] %>, <%= person.with_indifferent_access[:first_names] %></pnx_display_name>
+      <pnx_display_name><%=  no_tag_print person, :last_name  %>, <%=  no_tag_print person, :first_names %></pnx_display_name>
   <% end %>
 
   <% if person.has_key?("identifiers") || person.has_key?("username") %>
   <identifiers>
   <% if person.has_key?("username") %>
     <%= print person, :username, :staff_nbr %>
-    <staff_nbr_link>$$D<%= person.with_indifferent_access[:last_name] %>, <%= person.with_indifferent_access[:first_names] %>$$U<%= person.with_indifferent_access[:username] %></staff_nbr_link>
+    <staff_nbr_link>$$D<%=  no_tag_print person, :last_name %>, <%=  no_tag_print person, :first_names %>$$U<%=  no_tag_print person, :username %></staff_nbr_link>
   <% end %>
   <% if person.has_key?("identifiers") %>
     <%
@@ -34,7 +34,7 @@
     %>
     <% identifiers.each do |identifier| %>
       <<%= identifier.attributes["scheme"]  %>><%= identifier %></<%= identifier.attributes["scheme" ]%>>
-      <<%= identifier.attributes["scheme"]  %>_link>$$D<%= person.with_indifferent_access[:last_name] %>, <%= person.with_indifferent_access[:first_names] %>$$U<%= identifier %></<%= identifier.attributes["scheme" ]%>_link>
+      <<%= identifier.attributes["scheme"]  %>_link>$$D<%=  no_tag_print person, :last_name %>, <%=  no_tag_print person, :first_names %>$$U<%= identifier %></<%= identifier.attributes["scheme" ]%>_link>
     <% end %>
   <% end %>
   </identifiers>

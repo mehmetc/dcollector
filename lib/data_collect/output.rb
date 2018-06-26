@@ -14,6 +14,7 @@ class Output
 
   def initialize(data = {})
     @data = data
+    @logger = Logger.new(STDOUT)
   end
 
   def each
@@ -56,7 +57,7 @@ class Output
         if data.with_indifferent_access[symbol].is_a?(Array)
           r = []
           data.with_indifferent_access[symbol].each do |d|
-            r << "<#{tag}>#{CGI.escapeHTML(d)}</#{tag}>"
+            r << "<#{tag}>#{CGI.escapeHTML(d.to_s)}</#{tag}>"
           end
           r.join("\n")
         elsif data.with_indifferent_access[symbol].is_a?(Hash)
@@ -68,7 +69,7 @@ class Output
           r << "</#{tag}>"
           r.join("\n")
         else
-          "<#{tag}>#{CGI.escapeHTML(data.with_indifferent_access[symbol])}</#{tag}>"
+          "<#{tag}>#{CGI.escapeHTML(data.with_indifferent_access[symbol].to_s)}</#{tag}>"
         end
       else
         nil
@@ -77,6 +78,24 @@ class Output
       @logger.error("unable to print data '#{symbol}'")
     end
 
+    def no_tag_print(data, symbol)
+      if data.with_indifferent_access[symbol]
+        if data.with_indifferent_access[symbol].is_a?(Array)
+          r = []
+          data.with_indifferent_access[symbol].each do |d|
+            r << "#{CGI.escapeHTML(d.to_s)}"
+          end
+          r.join(",\n")
+        else
+          "#{CGI.escapeHTML(data.with_indifferent_access[symbol].to_s)}"
+        end
+      else
+        nil  
+      end
+    rescue Exception => e
+      @logger.error("unable to print (without tag) data '#{symbol}'")
+    end
+      
     data[:response_date] = DateTime.now.xmlschema
 
     result = ERB.new(File.read(erb_file), 0, '>').result(binding)
