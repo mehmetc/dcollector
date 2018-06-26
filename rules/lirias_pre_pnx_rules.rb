@@ -19,7 +19,7 @@ begin
   deleted_records = 0
   max_deleted_records = 50000
 
-  debugging = true
+  debugging = false
 
 if debugging
   max_updated_records = 10
@@ -35,6 +35,7 @@ end
 
   log("Get Data affected-since #{from_date} ")
     
+
   while url
     timing_start = Time.now
     #Load data
@@ -54,6 +55,7 @@ end
       output[:updated] = filter(object, '@._last_affected_when')
       
       last_affected_when = output[:updated][0]
+
       #results are sorted by last_affected_when
 
       #log(" record id #{ output[:id] } ")
@@ -398,5 +400,4 @@ end
 ensure
   log("Counted #{updated_records} updated records")
   log("Counted #{deleted_records} deleted records")
-  # config[:last_run_updates] = Time.now.xmlschema
 end
