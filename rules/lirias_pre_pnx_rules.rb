@@ -19,7 +19,7 @@ begin
   deleted_records = 0
   max_deleted_records = 50000
 
-  debugging = false
+  debugging = true
 
 if debugging
   max_updated_records = 10
@@ -400,4 +400,5 @@ end
 ensure
   log("Counted #{updated_records} updated records")
   log("Counted #{deleted_records} deleted records")
+  # config[:last_run_updates] = Time.now.xmlschema
 end
