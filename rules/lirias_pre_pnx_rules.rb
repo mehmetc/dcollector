@@ -24,7 +24,7 @@ begin
 if debugging
   max_updated_records = 10
   max_deleted_records = 5
-  #url = 'file://mock.xml'
+  url = 'file://mock.xml'
 end
 
 
