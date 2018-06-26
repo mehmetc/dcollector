@@ -985,4 +985,962 @@
       <api:relationships href="https://lirias2.t.icts.kuleuven.be:8091/secure-api/v5.5/publications/1247806/relationships"/>
     </api:object>
   </entry>
+    <entry>
+        <id>tag:elements-cache.prod@kuleuven,2018-01-31:/publications/1990279</id>
+        <updated>2018-06-25T09:36:03.150Z</updated>
+        <title>A Single-Cell Transcriptome Atlas of the Aging Drosophila Brain</title>
+        <content>Publication 1990279</content>
+        <api:object category="publication"
+                  created-when="2018-06-21T23:23:24.12+02:00"
+                  href="https://lirias2.kuleuven.be:8091/secure-api/v5.5/publications/1990279"
+                  id="1990279"
+                  last-affected-when="2018-06-25T11:36:03.15+02:00"
+                  last-modified-when="2018-06-25T11:36:03.15+02:00"
+                  type="journal-article"
+                  type-id="5">
+            <api:records>
+                <api:record source-name="merged">
+                    <api:native>
+                        <api:field display-name="Public URL" name="public-url" type="text">
+                            <api:text>https://lirias.kuleuven.be/handle/123456789/624745</api:text>
+                        </api:field>
+                        <api:field display-name="Public URL" name="public-url" type="text">
+                            <api:text>https://lirias.kuleuven.be/1990279</api:text>
+                        </api:field>
+                        <api:field display-name="Abstract" name="abstract" type="text">
+                            <api:text>The diversity of cell types and regulatory states in the brain, and how these change during aging, remains largely unknown. We present a single-cell transcriptome atlas of the entire adult Drosophila melanogaster brain sampled across its lifespan. Cell clustering identified 87 initial cell clusters that are further subclustered and validated by targeted cell-sorting. Our data show high granularity and identify a wide range of cell types. Gene network analyses using SCENIC revealed regulatory heterogeneity linked to energy consumption. During aging, RNA content declines exponentially without affecting neuronal identity in old brains. This single-cell brain atlas covers nearly all cells in the normal brain and provides the tools to study cellular diversity alongside other Drosophila and mammalian single-cell datasets in our unique single-cell analysis platform: SCope (http://scope.aertslab.org). These results, together with SCope, allow comprehensive exploration of all transcriptional states of an entire aging brain.</api:text>
+                        </api:field>
+                        <api:field display-name="Acceptance date" name="acceptance-date" type="date">
+                            <api:date>
+                                <api:day>25</api:day>
+                                <api:month>5</api:month>
+                                <api:year>2018</api:year>
+                            </api:date>
+                        </api:field>
+                        <api:field display-name="Authors" name="authors" type="person-list">
+                            <api:people>
+                                <api:person>
+                                    <api:links>
+                                        <api:link href="https://lirias2.kuleuven.be:8091/secure-api/v5.5/users/11528"
+                                        id="11528"
+                                        type="elements/user"/>
+                                    </api:links>
+                                    <api:last-name>Davie</api:last-name>
+                                    <api:initials>K</api:initials>
+                                    <api:first-names>Kristofer</api:first-names>
+                                    <api:username>U0094113</api:username>
+                                </api:person>
+                                <api:person>
+                                    <api:last-name>Janssens</api:last-name>
+                                    <api:initials>J</api:initials>
+                                    <api:first-names>Jasper</api:first-names>
+                                </api:person>
+                                <api:person>
+                                    <api:last-name>Koldere</api:last-name>
+                                    <api:initials>D</api:initials>
+                                    <api:first-names>Duygu</api:first-names>
+                                </api:person>
+                                <api:person>
+                                    <api:last-name>De Waegeneer</api:last-name>
+                                    <api:initials>M</api:initials>
+                                    <api:first-names>Maxime</api:first-names>
+                                </api:person>
+                                <api:person>
+                                    <api:last-name>Pech</api:last-name>
+                                    <api:initials>U</api:initials>
+                                    <api:first-names>Ulrike</api:first-names>
+                                </api:person>
+                                <api:person>
+                                    <api:last-name>Kreft</api:last-name>
+                                    <api:initials>L</api:initials>
+                                    <api:first-names>Lukasz</api:first-names>
+                                </api:person>
+                                <api:person>
+                                    <api:last-name>Aibar Santos</api:last-name>
+                                    <api:initials>S</api:initials>
+                                    <api:first-names>Sara</api:first-names>
+                                </api:person>
+                                <api:person>
+                                    <api:last-name>Makhzami</api:last-name>
+                                    <api:initials>S</api:initials>
+                                    <api:first-names>Samira</api:first-names>
+                                </api:person>
+                                <api:person>
+                                    <api:last-name>Christiaens</api:last-name>
+                                    <api:initials>V</api:initials>
+                                    <api:first-names>Valerie</api:first-names>
+                                </api:person>
+                                <api:person>
+                                    <api:last-name>Bravo Gonzalez Blas</api:last-name>
+                                    <api:initials>MDC</api:initials>
+                                    <api:first-names>Maria del Carmen</api:first-names>
+                                </api:person>
+                                <api:person>
+                                    <api:last-name>Poovathingal</api:last-name>
+                                    <api:initials>S</api:initials>
+                                    <api:first-names>Suresh</api:first-names>
+                                </api:person>
+                                <api:person>
+                                    <api:last-name>Hulselmans</api:last-name>
+                                    <api:initials>GJ</api:initials>
+                                    <api:first-names>Gert Jan</api:first-names>
+                                </api:person>
+                                <api:person>
+                                    <api:last-name>Spanier</api:last-name>
+                                    <api:initials>K</api:initials>
+                                    <api:first-names>Katina</api:first-names>
+                                </api:person>
+                                <api:person>
+                                    <api:last-name>Moerman</api:last-name>
+                                    <api:initials>T</api:initials>
+                                    <api:first-names>Thomas</api:first-names>
+                                </api:person>
+                                <api:person>
+                                    <api:last-name>Vanspauwen</api:last-name>
+                                    <api:initials>B</api:initials>
+                                    <api:first-names>Bram</api:first-names>
+                                </api:person>
+                                <api:person>
+                                    <api:last-name>Geurs</api:last-name>
+                                    <api:initials>S</api:initials>
+                                    <api:first-names>Sarah</api:first-names>
+                                </api:person>
+                                <api:person>
+                                    <api:links>
+                                        <api:link href="https://lirias2.kuleuven.be:8091/secure-api/v5.5/users/624"
+                                        id="624"
+                                        type="elements/user"/>
+                                    </api:links>
+                                    <api:last-name>Voet</api:last-name>
+                                    <api:initials>T</api:initials>
+                                    <api:first-names>Thierry</api:first-names>
+                                    <api:username>U0006471</api:username>
+                                </api:person>
+                                <api:person>
+                                    <api:links>
+                                        <api:link href="https://lirias2.kuleuven.be:8091/secure-api/v5.5/users/42"
+                                        id="42"
+                                        type="elements/user"/>
+                                    </api:links>
+                                    <api:last-name>Lammertyn</api:last-name>
+                                    <api:initials>J</api:initials>
+                                    <api:first-names>Jeroen</api:first-names>
+                                    <api:username>U0002118</api:username>
+                                </api:person>
+                                <api:person>
+                                    <api:links>
+                                        <api:link href="https://lirias2.kuleuven.be:8091/secure-api/v5.5/users/3668"
+                                        id="3668"
+                                        type="elements/user"/>
+                                    </api:links>
+                                    <api:last-name>Thienpont</api:last-name>
+                                    <api:initials>B</api:initials>
+                                    <api:first-names>Bernard</api:first-names>
+                                    <api:username>U0048367</api:username>
+                                </api:person>
+                                <api:person>
+                                    <api:last-name>Liu</api:last-name>
+                                    <api:initials>S</api:initials>
+                                    <api:first-names>Sha</api:first-names>
+                                </api:person>
+                                <api:person>
+                                    <api:last-name>Konstantinides</api:last-name>
+                                    <api:initials>N</api:initials>
+                                    <api:first-names>Nikos</api:first-names>
+                                </api:person>
+                                <api:person>
+                                    <api:last-name>Fiers</api:last-name>
+                                    <api:initials>M</api:initials>
+                                    <api:first-names>Mark</api:first-names>
+                                </api:person>
+                                <api:person>
+                                    <api:links>
+                                        <api:link href="https://lirias2.kuleuven.be:8091/secure-api/v5.5/users/4145"
+                                        id="4145"
+                                        type="elements/user"/>
+                                    </api:links>
+                                    <api:last-name>Verstreken</api:last-name>
+                                    <api:initials>P</api:initials>
+                                    <api:first-names>Patrik</api:first-names>
+                                    <api:username>U0052606</api:username>
+                                </api:person>
+                                <api:person>
+                                    <api:links>
+                                        <api:link href="https://lirias2.kuleuven.be:8091/secure-api/v5.5/users/2798"
+                                        id="2798"
+                                        type="elements/user"/>
+                                    </api:links>
+                                    <api:last-name>Aerts</api:last-name>
+                                    <api:initials>S</api:initials>
+                                    <api:first-names>Stein</api:first-names>
+                                    <api:username>U0038182</api:username>
+                                </api:person>
+                            </api:people>
+                        </api:field>
+                        <api:field display-name="This is a publication by (a) KU Leuven author(s)"
+                             name="c-affiliation"
+                             type="boolean">
+                            <api:boolean>true</api:boolean>
+                        </api:field>
+                        <api:field display-name="Corresponding author"
+                             name="c-corresponding-author"
+                             type="person-list">
+                            <api:people>
+                                <api:person>
+                                    <api:last-name>Aerts</api:last-name>
+                                    <api:initials>S</api:initials>
+                                    <api:first-names>Stein</api:first-names>
+                                </api:person>
+                            </api:people>
+                        </api:field>
+                        <api:field display-name="Joint first author"
+                             name="c-jointfirst-author"
+                             type="person-list">
+                            <api:people>
+                                <api:person>
+                                    <api:last-name>Davie</api:last-name>
+                                    <api:initials>K</api:initials>
+                                    <api:first-names>Kristofer</api:first-names>
+                                </api:person>
+                                <api:person>
+                                    <api:last-name>Jansenns</api:last-name>
+                                    <api:initials>J</api:initials>
+                                    <api:first-names>Jasper</api:first-names>
+                                </api:person>
+                                <api:person>
+                                    <api:last-name>Koldere</api:last-name>
+                                    <api:initials>D</api:initials>
+                                    <api:first-names>Duygu</api:first-names>
+                                </api:person>
+                            </api:people>
+                        </api:field>
+                        <api:field display-name="Peer reviewed?" name="c-peer-review" type="text">
+                            <api:text>Yes - author can provide reports</api:text>
+                        </api:field>
+                        <api:field display-name="Professional oriented publication"
+                             name="c-professional"
+                             type="boolean">
+                            <api:boolean>false</api:boolean>
+                        </api:field>
+                        <api:field display-name="DOI" name="doi" type="text">
+                            <api:text>10.1016/j.cell.2018.05.057</api:text>
+                            <api:links>
+                                <api:link href="http://doi.org/10.1016/j.cell.2018.05.057" type="doi"/>
+                                <api:link href="http://www.altmetric.com/details.php?doi=10.1016/j.cell.2018.05.057"
+                                  type="altmetric"/>
+                            </api:links>
+                        </api:field>
+                        <api:field display-name="ISSN" name="issn" type="text">
+                            <api:text>0092-8674</api:text>
+                            <api:links>
+                                <api:link href="https://lirias2.kuleuven.be:8091/secure-api/v5.5/journals/17170"
+                                  type="elements/journal"/>
+                            </api:links>
+                        </api:field>
+                        <api:field display-name="Journal" name="journal" type="text">
+                            <api:text>Cell</api:text>
+                        </api:field>
+                        <api:field display-name="Medium" name="medium" type="text">
+                            <api:text>Digital</api:text>
+                        </api:field>
+                        <api:field display-name="Online publication date"
+                             name="online-publication-date"
+                             type="date">
+                            <api:date>
+                                <api:day>14</api:day>
+                                <api:month>6</api:month>
+                                <api:year>2018</api:year>
+                            </api:date>
+                        </api:field>
+                        <api:field display-name="Pagination" name="pagination" type="pagination">
+                            <api:pagination>
+                                <api:begin-page>1</api:begin-page>
+                                <api:end-page>17</api:end-page>
+                            </api:pagination>
+                        </api:field>
+                        <api:field display-name="Publication date" name="publication-date" type="date">
+                            <api:date>
+                                <api:day>9</api:day>
+                                <api:month>8</api:month>
+                                <api:year>2018</api:year>
+                            </api:date>
+                        </api:field>
+                        <api:field display-name="Status" name="publication-status" type="text">
+                            <api:text>Published online</api:text>
+                        </api:field>
+                        <api:field display-name="Publisher" name="publisher" type="text">
+                            <api:text>Elsevier</api:text>
+                        </api:field>
+                        <api:field display-name="Publisher licence"
+                             name="publisher-licence"
+                             type="text">
+                            <api:text>CC BY-NC-ND</api:text>
+                        </api:field>
+                        <api:field display-name="Record created at source"
+                             name="record-created-at-source-date"
+                             type="date">
+                            <api:date>
+                                <api:day>21</api:day>
+                                <api:month>6</api:month>
+                                <api:year>2018</api:year>
+                            </api:date>
+                        </api:field>
+                        <api:field display-name="Title" name="title" type="text">
+                            <api:text>A Single-Cell Transcriptome Atlas of the Aging Drosophila Brain</api:text>
+                        </api:field>
+                        <api:field display-name="Volume" name="volume" type="text">
+                            <api:text>174</api:text>
+                        </api:field>
+                        <api:field display-name="eISSN" name="eissn" type="text">
+                            <api:text>1097-4172</api:text>
+                            <api:links>
+                                <api:link href="https://lirias2.kuleuven.be:8091/secure-api/v5.5/journals/17170"
+                                  type="elements/journal"/>
+                            </api:links>
+                        </api:field>
+                        <api:field display-name="Sub types" name="types" type="list">
+                            <api:items>
+                                <api:item>Article in Press</api:item>
+                            </api:items>
+                        </api:field>
+                        <api:field display-name="Collections" name="collections" type="list">
+                            <api:items>
+                                <api:item>New Deposits</api:item>
+                            </api:items>
+                        </api:field>
+                        <api:field display-name="Record made publicly available"
+                             name="record-made-public-at-source-date"
+                             type="date">
+                            <api:date>
+                                <api:day>21</api:day>
+                                <api:month>6</api:month>
+                                <api:year>2018</api:year>
+                            </api:date>
+                        </api:field>
+                        <api:field display-name="Availability" name="repository-status" type="text">
+                            <api:text>Public</api:text>
+                        </api:field>
+                        <api:files>
+                            <api:file proprietary-id="511912">
+                                <api:filename>PIIS0092867418307207.pdf</api:filename>
+                                <api:extension>pdf</api:extension>
+                                <api:file-size>13387454</api:file-size>
+                                <api:mime-type>application/pdf</api:mime-type>
+                                <api:checksum algorithm="md5">D5C666EF4C8374BB35CC8CDD545C61FF</api:checksum>
+                                <api:description>Published version</api:description>
+                                <api:is-open-access>true</api:is-open-access>
+                                <api:file-url>https://lirias.kuleuven.be/retrieve/511912</api:file-url>
+                                <api:filePublic>true</api:filePublic>
+                                <api:fileIntranet>true</api:fileIntranet>
+                            </api:file>
+                        </api:files>
+                        <api:field display-name="User OUs" name="cache-user-ous" type="list">
+                            <api:items>
+                                <api:item>51841970</api:item>
+                                <api:item>50000050</api:item>
+                                <api:item>50000598</api:item>
+                                <api:item>50000622</api:item>
+                                <api:item>51146370</api:item>
+                                <api:item>50000666</api:item>
+                                <api:item>54028564</api:item>
+                                <api:item>50802609</api:item>
+                                <api:item>50000403</api:item>
+                                <api:item>50463548</api:item>
+                                <api:item>50463906</api:item>
+                            </api:items>
+                        </api:field>
+                    </api:native>
+                </api:record>
+                <api:record format="native"
+                        id="4117783"
+                        id-at-source="A8C91B53-74D8-463D-9B8A-AF0D015B4EF0"
+                        source-display-name="Manual"
+                        source-id="1"
+                        source-name="manual">
+                    <api:verification-status>verified</api:verification-status>
+                    <api:native>
+                        <api:field display-name="Abstract" name="abstract" type="text">
+                            <api:text>The diversity of cell types and regulatory states in the brain, and how these change during aging, remains largely unknown. We present a single-cell transcriptome atlas of the entire adult Drosophila melanogaster brain sampled across its lifespan. Cell clustering identified 87 initial cell clusters that are further subclustered and validated by targeted cell-sorting. Our data show high granularity and identify a wide range of cell types. Gene network analyses using SCENIC revealed regulatory heterogeneity linked to energy consumption. During aging, RNA content declines exponentially without affecting neuronal identity in old brains. This single-cell brain atlas covers nearly all cells in the normal brain and provides the tools to study cellular diversity alongside other Drosophila and mammalian single-cell datasets in our unique single-cell analysis platform: SCope (http://scope.aertslab.org). These results, together with SCope, allow comprehensive exploration of all transcriptional states of an entire aging brain.</api:text>
+                        </api:field>
+                        <api:field display-name="Acceptance date" name="acceptance-date" type="date">
+                            <api:date>
+                                <api:day>25</api:day>
+                                <api:month>5</api:month>
+                                <api:year>2018</api:year>
+                            </api:date>
+                        </api:field>
+                        <api:field display-name="Authors" name="authors" type="person-list">
+                            <api:people>
+                                <api:person>
+                                    <api:links>
+                                        <api:link href="https://lirias2.kuleuven.be:8091/secure-api/v5.5/users/11528"
+                                        id="11528"
+                                        type="elements/user"/>
+                                    </api:links>
+                                    <api:last-name>Davie</api:last-name>
+                                    <api:initials>K</api:initials>
+                                    <api:first-names>Kristofer</api:first-names>
+                                    <api:username>U0094113</api:username>
+                                </api:person>
+                                <api:person>
+                                    <api:last-name>Janssens</api:last-name>
+                                    <api:initials>J</api:initials>
+                                    <api:first-names>Jasper</api:first-names>
+                                </api:person>
+                                <api:person>
+                                    <api:last-name>Koldere</api:last-name>
+                                    <api:initials>D</api:initials>
+                                    <api:first-names>Duygu</api:first-names>
+                                </api:person>
+                                <api:person>
+                                    <api:last-name>De Waegeneer</api:last-name>
+                                    <api:initials>M</api:initials>
+                                    <api:first-names>Maxime</api:first-names>
+                                </api:person>
+                                <api:person>
+                                    <api:last-name>Pech</api:last-name>
+                                    <api:initials>U</api:initials>
+                                    <api:first-names>Ulrike</api:first-names>
+                                </api:person>
+                                <api:person>
+                                    <api:last-name>Kreft</api:last-name>
+                                    <api:initials>L</api:initials>
+                                    <api:first-names>Lukasz</api:first-names>
+                                </api:person>
+                                <api:person>
+                                    <api:last-name>Aibar Santos</api:last-name>
+                                    <api:initials>S</api:initials>
+                                    <api:first-names>Sara</api:first-names>
+                                </api:person>
+                                <api:person>
+                                    <api:last-name>Makhzami</api:last-name>
+                                    <api:initials>S</api:initials>
+                                    <api:first-names>Samira</api:first-names>
+                                </api:person>
+                                <api:person>
+                                    <api:last-name>Christiaens</api:last-name>
+                                    <api:initials>V</api:initials>
+                                    <api:first-names>Valerie</api:first-names>
+                                </api:person>
+                                <api:person>
+                                    <api:last-name>Bravo Gonzalez Blas</api:last-name>
+                                    <api:initials>MDC</api:initials>
+                                    <api:first-names>Maria del Carmen</api:first-names>
+                                </api:person>
+                                <api:person>
+                                    <api:last-name>Poovathingal</api:last-name>
+                                    <api:initials>S</api:initials>
+                                    <api:first-names>Suresh</api:first-names>
+                                </api:person>
+                                <api:person>
+                                    <api:last-name>Hulselmans</api:last-name>
+                                    <api:initials>GJ</api:initials>
+                                    <api:first-names>Gert Jan</api:first-names>
+                                </api:person>
+                                <api:person>
+                                    <api:last-name>Spanier</api:last-name>
+                                    <api:initials>K</api:initials>
+                                    <api:first-names>Katina</api:first-names>
+                                </api:person>
+                                <api:person>
+                                    <api:last-name>Moerman</api:last-name>
+                                    <api:initials>T</api:initials>
+                                    <api:first-names>Thomas</api:first-names>
+                                </api:person>
+                                <api:person>
+                                    <api:last-name>Vanspauwen</api:last-name>
+                                    <api:initials>B</api:initials>
+                                    <api:first-names>Bram</api:first-names>
+                                </api:person>
+                                <api:person>
+                                    <api:last-name>Geurs</api:last-name>
+                                    <api:initials>S</api:initials>
+                                    <api:first-names>Sarah</api:first-names>
+                                </api:person>
+                                <api:person>
+                                    <api:links>
+                                        <api:link href="https://lirias2.kuleuven.be:8091/secure-api/v5.5/users/624"
+                                        id="624"
+                                        type="elements/user"/>
+                                    </api:links>
+                                    <api:last-name>Voet</api:last-name>
+                                    <api:initials>T</api:initials>
+                                    <api:first-names>Thierry</api:first-names>
+                                    <api:username>U0006471</api:username>
+                                </api:person>
+                                <api:person>
+                                    <api:links>
+                                        <api:link href="https://lirias2.kuleuven.be:8091/secure-api/v5.5/users/42"
+                                        id="42"
+                                        type="elements/user"/>
+                                    </api:links>
+                                    <api:last-name>Lammertyn</api:last-name>
+                                    <api:initials>J</api:initials>
+                                    <api:first-names>Jeroen</api:first-names>
+                                    <api:username>U0002118</api:username>
+                                </api:person>
+                                <api:person>
+                                    <api:links>
+                                        <api:link href="https://lirias2.kuleuven.be:8091/secure-api/v5.5/users/3668"
+                                        id="3668"
+                                        type="elements/user"/>
+                                    </api:links>
+                                    <api:last-name>Thienpont</api:last-name>
+                                    <api:initials>B</api:initials>
+                                    <api:first-names>Bernard</api:first-names>
+                                    <api:username>U0048367</api:username>
+                                </api:person>
+                                <api:person>
+                                    <api:last-name>Liu</api:last-name>
+                                    <api:initials>S</api:initials>
+                                    <api:first-names>Sha</api:first-names>
+                                </api:person>
+                                <api:person>
+                                    <api:last-name>Konstantinides</api:last-name>
+                                    <api:initials>N</api:initials>
+                                    <api:first-names>Nikos</api:first-names>
+                                </api:person>
+                                <api:person>
+                                    <api:last-name>Fiers</api:last-name>
+                                    <api:initials>M</api:initials>
+                                    <api:first-names>Mark</api:first-names>
+                                </api:person>
+                                <api:person>
+                                    <api:links>
+                                        <api:link href="https://lirias2.kuleuven.be:8091/secure-api/v5.5/users/4145"
+                                        id="4145"
+                                        type="elements/user"/>
+                                    </api:links>
+                                    <api:last-name>Verstreken</api:last-name>
+                                    <api:initials>P</api:initials>
+                                    <api:first-names>Patrik</api:first-names>
+                                    <api:username>U0052606</api:username>
+                                </api:person>
+                                <api:person>
+                                    <api:links>
+                                        <api:link href="https://lirias2.kuleuven.be:8091/secure-api/v5.5/users/2798"
+                                        id="2798"
+                                        type="elements/user"/>
+                                    </api:links>
+                                    <api:last-name>Aerts</api:last-name>
+                                    <api:initials>S</api:initials>
+                                    <api:first-names>Stein</api:first-names>
+                                    <api:username>U0038182</api:username>
+                                </api:person>
+                            </api:people>
+                        </api:field>
+                        <api:field display-name="This is a publication by (a) KU Leuven author(s)"
+                             name="c-affiliation"
+                             type="boolean">
+                            <api:boolean>true</api:boolean>
+                        </api:field>
+                        <api:field display-name="Corresponding author"
+                             name="c-corresponding-author"
+                             type="person-list">
+                            <api:people>
+                                <api:person>
+                                    <api:last-name>Aerts</api:last-name>
+                                    <api:initials>S</api:initials>
+                                    <api:first-names>Stein</api:first-names>
+                                </api:person>
+                            </api:people>
+                        </api:field>
+                        <api:field display-name="Joint first author"
+                             name="c-jointfirst-author"
+                             type="person-list">
+                            <api:people>
+                                <api:person>
+                                    <api:last-name>Davie</api:last-name>
+                                    <api:initials>K</api:initials>
+                                    <api:first-names>Kristofer</api:first-names>
+                                </api:person>
+                                <api:person>
+                                    <api:last-name>Jansenns</api:last-name>
+                                    <api:initials>J</api:initials>
+                                    <api:first-names>Jasper</api:first-names>
+                                </api:person>
+                                <api:person>
+                                    <api:last-name>Koldere</api:last-name>
+                                    <api:initials>D</api:initials>
+                                    <api:first-names>Duygu</api:first-names>
+                                </api:person>
+                            </api:people>
+                        </api:field>
+                        <api:field display-name="Peer reviewed?" name="c-peer-review" type="text">
+                            <api:text>Yes - author can provide reports</api:text>
+                        </api:field>
+                        <api:field display-name="Professional oriented publication"
+                             name="c-professional"
+                             type="boolean">
+                            <api:boolean>false</api:boolean>
+                        </api:field>
+                        <api:field display-name="DOI" name="doi" type="text">
+                            <api:text>10.1016/j.cell.2018.05.057</api:text>
+                            <api:links>
+                                <api:link href="http://doi.org/10.1016/j.cell.2018.05.057" type="doi"/>
+                                <api:link href="http://www.altmetric.com/details.php?doi=10.1016/j.cell.2018.05.057"
+                                  type="altmetric"/>
+                            </api:links>
+                        </api:field>
+                        <api:field display-name="ISSN" name="issn" type="text">
+                            <api:text>0092-8674</api:text>
+                            <api:links>
+                                <api:link href="https://lirias2.kuleuven.be:8091/secure-api/v5.5/journals/17170"
+                                  type="elements/journal"/>
+                            </api:links>
+                        </api:field>
+                        <api:field display-name="Journal" name="journal" type="text">
+                            <api:text>CELL</api:text>
+                        </api:field>
+                        <api:field display-name="Medium" name="medium" type="text">
+                            <api:text>Digital</api:text>
+                        </api:field>
+                        <api:field display-name="Online publication date"
+                             name="online-publication-date"
+                             type="date">
+                            <api:date>
+                                <api:day>14</api:day>
+                                <api:month>6</api:month>
+                                <api:year>2018</api:year>
+                            </api:date>
+                        </api:field>
+                        <api:field display-name="Pagination" name="pagination" type="pagination">
+                            <api:pagination>
+                                <api:begin-page>1</api:begin-page>
+                                <api:end-page>17</api:end-page>
+                            </api:pagination>
+                        </api:field>
+                        <api:field display-name="Publication date" name="publication-date" type="date">
+                            <api:date>
+                                <api:day>9</api:day>
+                                <api:month>8</api:month>
+                                <api:year>2018</api:year>
+                            </api:date>
+                        </api:field>
+                        <api:field display-name="Status" name="publication-status" type="text">
+                            <api:text>Published online</api:text>
+                        </api:field>
+                        <api:field display-name="Publisher" name="publisher" type="text">
+                            <api:text>Elsevier</api:text>
+                        </api:field>
+                        <api:field display-name="Publisher licence"
+                             name="publisher-licence"
+                             type="text">
+                            <api:text>CC BY-NC-ND</api:text>
+                        </api:field>
+                        <api:field display-name="Record created at source"
+                             name="record-created-at-source-date"
+                             type="date">
+                            <api:date>
+                                <api:day>21</api:day>
+                                <api:month>6</api:month>
+                                <api:year>2018</api:year>
+                            </api:date>
+                        </api:field>
+                        <api:field display-name="Title" name="title" type="text">
+                            <api:text>A Single-Cell Transcriptome Atlas of the Aging Drosophila Brain</api:text>
+                        </api:field>
+                        <api:field display-name="Volume" name="volume" type="text">
+                            <api:text>174</api:text>
+                        </api:field>
+                    </api:native>
+                </api:record>
+                <api:record format="native"
+                        id="4117979"
+                        id-at-source="2-s2.0-85048501088"
+                        source-display-name="Scopus"
+                        source-id="7"
+                        source-name="scopus">
+                    <api:citation-count>0</api:citation-count>
+                    <api:native/>
+                </api:record>
+                <api:record format="native"
+                        id="4117786"
+                        id-at-source="655167"
+                        source-display-name="DSpace"
+                        source-id="24"
+                        source-name="dspace">
+                    <api:native>
+                        <api:field display-name="Abstract" name="abstract" type="text">
+                            <api:text>The diversity of cell types and regulatory states in the brain, and how these change during aging, remains largely unknown. We present a single-cell transcriptome atlas of the entire adult Drosophila melanogaster brain sampled across its lifespan. Cell clustering identified 87 initial cell clusters that are further subclustered and validated by targeted cell-sorting. Our data show high granularity and identify a wide range of cell types. Gene network analyses using SCENIC revealed regulatory heterogeneity linked to energy consumption. During aging, RNA content declines exponentially without affecting neuronal identity in old brains. This single-cell brain atlas covers nearly all cells in the normal brain and provides the tools to study cellular diversity alongside other Drosophila and mammalian single-cell datasets in our unique single-cell analysis platform: SCope (http://scope.aertslab.org). These results, together with SCope, allow comprehensive exploration of all transcriptional states of an entire aging brain.</api:text>
+                        </api:field>
+                        <api:field display-name="Authors" name="authors" type="person-list">
+                            <api:people>
+                                <api:person>
+                                    <api:links>
+                                        <api:link href="https://lirias2.kuleuven.be:8091/secure-api/v5.5/users/11528"
+                                        id="11528"
+                                        type="elements/user"/>
+                                    </api:links>
+                                    <api:last-name>Davie</api:last-name>
+                                    <api:initials>K</api:initials>
+                                    <api:first-names>Kristofer</api:first-names>
+                                    <api:username>U0094113</api:username>
+                                </api:person>
+                                <api:person>
+                                    <api:last-name>Janssens</api:last-name>
+                                    <api:initials>J</api:initials>
+                                    <api:first-names>Jasper</api:first-names>
+                                </api:person>
+                                <api:person>
+                                    <api:last-name>Koldere</api:last-name>
+                                    <api:initials>D</api:initials>
+                                    <api:first-names>Duygu</api:first-names>
+                                </api:person>
+                                <api:person>
+                                    <api:last-name>De Waegeneer</api:last-name>
+                                    <api:initials>M</api:initials>
+                                    <api:first-names>Maxime</api:first-names>
+                                </api:person>
+                                <api:person>
+                                    <api:last-name>Pech</api:last-name>
+                                    <api:initials>U</api:initials>
+                                    <api:first-names>Ulrike</api:first-names>
+                                </api:person>
+                                <api:person>
+                                    <api:last-name>Kreft</api:last-name>
+                                    <api:initials>L</api:initials>
+                                    <api:first-names>Lukasz</api:first-names>
+                                </api:person>
+                                <api:person>
+                                    <api:last-name>Aibar Santos</api:last-name>
+                                    <api:initials>S</api:initials>
+                                    <api:first-names>Sara</api:first-names>
+                                </api:person>
+                                <api:person>
+                                    <api:last-name>Makhzami</api:last-name>
+                                    <api:initials>S</api:initials>
+                                    <api:first-names>Samira</api:first-names>
+                                </api:person>
+                                <api:person>
+                                    <api:last-name>Christiaens</api:last-name>
+                                    <api:initials>V</api:initials>
+                                    <api:first-names>Valerie</api:first-names>
+                                </api:person>
+                                <api:person>
+                                    <api:last-name>Bravo Gonzalez Blas</api:last-name>
+                                    <api:initials>MDC</api:initials>
+                                    <api:first-names>Maria del Carmen</api:first-names>
+                                </api:person>
+                                <api:person>
+                                    <api:last-name>Poovathingal</api:last-name>
+                                    <api:initials>S</api:initials>
+                                    <api:first-names>Suresh</api:first-names>
+                                </api:person>
+                                <api:person>
+                                    <api:last-name>Hulselmans</api:last-name>
+                                    <api:initials>GJ</api:initials>
+                                    <api:first-names>Gert Jan</api:first-names>
+                                </api:person>
+                                <api:person>
+                                    <api:last-name>Spanier</api:last-name>
+                                    <api:initials>K</api:initials>
+                                    <api:first-names>Katina</api:first-names>
+                                </api:person>
+                                <api:person>
+                                    <api:last-name>Moerman</api:last-name>
+                                    <api:initials>T</api:initials>
+                                    <api:first-names>Thomas</api:first-names>
+                                </api:person>
+                                <api:person>
+                                    <api:last-name>Vanspauwen</api:last-name>
+                                    <api:initials>B</api:initials>
+                                    <api:first-names>Bram</api:first-names>
+                                </api:person>
+                                <api:person>
+                                    <api:last-name>Geurs</api:last-name>
+                                    <api:initials>S</api:initials>
+                                    <api:first-names>Sarah</api:first-names>
+                                </api:person>
+                                <api:person>
+                                    <api:links>
+                                        <api:link href="https://lirias2.kuleuven.be:8091/secure-api/v5.5/users/624"
+                                        id="624"
+                                        type="elements/user"/>
+                                    </api:links>
+                                    <api:last-name>Voet</api:last-name>
+                                    <api:initials>T</api:initials>
+                                    <api:first-names>Thierry</api:first-names>
+                                    <api:username>U0006471</api:username>
+                                </api:person>
+                                <api:person>
+                                    <api:links>
+                                        <api:link href="https://lirias2.kuleuven.be:8091/secure-api/v5.5/users/42"
+                                        id="42"
+                                        type="elements/user"/>
+                                    </api:links>
+                                    <api:last-name>Lammertyn</api:last-name>
+                                    <api:initials>J</api:initials>
+                                    <api:first-names>Jeroen</api:first-names>
+                                    <api:username>U0002118</api:username>
+                                </api:person>
+                                <api:person>
+                                    <api:links>
+                                        <api:link href="https://lirias2.kuleuven.be:8091/secure-api/v5.5/users/3668"
+                                        id="3668"
+                                        type="elements/user"/>
+                                    </api:links>
+                                    <api:last-name>Thienpont</api:last-name>
+                                    <api:initials>B</api:initials>
+                                    <api:first-names>Bernard</api:first-names>
+                                    <api:username>U0048367</api:username>
+                                </api:person>
+                                <api:person>
+                                    <api:last-name>Liu</api:last-name>
+                                    <api:initials>S</api:initials>
+                                    <api:first-names>Sha</api:first-names>
+                                </api:person>
+                                <api:person>
+                                    <api:last-name>Konstantinides</api:last-name>
+                                    <api:initials>N</api:initials>
+                                    <api:first-names>Nikos</api:first-names>
+                                </api:person>
+                                <api:person>
+                                    <api:last-name>Fiers</api:last-name>
+                                    <api:initials>M</api:initials>
+                                    <api:first-names>Mark</api:first-names>
+                                </api:person>
+                                <api:person>
+                                    <api:links>
+                                        <api:link href="https://lirias2.kuleuven.be:8091/secure-api/v5.5/users/4145"
+                                        id="4145"
+                                        type="elements/user"/>
+                                    </api:links>
+                                    <api:last-name>Verstreken</api:last-name>
+                                    <api:initials>P</api:initials>
+                                    <api:first-names>Patrik</api:first-names>
+                                    <api:username>U0052606</api:username>
+                                </api:person>
+                                <api:person>
+                                    <api:links>
+                                        <api:link href="https://lirias2.kuleuven.be:8091/secure-api/v5.5/users/2798"
+                                        id="2798"
+                                        type="elements/user"/>
+                                    </api:links>
+                                    <api:last-name>Aerts</api:last-name>
+                                    <api:initials>S</api:initials>
+                                    <api:first-names>Stein</api:first-names>
+                                    <api:username>U0038182</api:username>
+                                </api:person>
+                            </api:people>
+                        </api:field>
+                        <api:field display-name="This is a publication by (a) KU Leuven author(s)"
+                             name="c-affiliation"
+                             type="boolean">
+                            <api:boolean>true</api:boolean>
+                        </api:field>
+                        <api:field display-name="Collections" name="collections" type="list">
+                            <api:items>
+                                <api:item>New Deposits</api:item>
+                            </api:items>
+                        </api:field>
+                        <api:field display-name="Peer reviewed?" name="c-peer-review" type="text">
+                            <api:text>No</api:text>
+                        </api:field>
+                        <api:field display-name="DOI" name="doi" type="text">
+                            <api:text>10.1016/j.cell.2018.05.057</api:text>
+                            <api:links>
+                                <api:link href="http://doi.org/10.1016/j.cell.2018.05.057" type="doi"/>
+                                <api:link href="http://www.altmetric.com/details.php?doi=10.1016/j.cell.2018.05.057"
+                                  type="altmetric"/>
+                            </api:links>
+                        </api:field>
+                        <api:field display-name="ISSN" name="issn" type="text">
+                            <api:text>0092-8674</api:text>
+                            <api:links>
+                                <api:link href="https://lirias2.kuleuven.be:8091/secure-api/v5.5/journals/17170"
+                                  type="elements/journal"/>
+                            </api:links>
+                        </api:field>
+                        <api:field display-name="Journal" name="journal" type="text">
+                            <api:text>CELL </api:text>
+                        </api:field>
+                        <api:field display-name="Medium" name="medium" type="text">
+                            <api:text>Digital</api:text>
+                        </api:field>
+                        <api:field display-name="Pagination" name="pagination" type="pagination">
+                            <api:pagination>
+                                <api:begin-page>1</api:begin-page>
+                                <api:end-page>17</api:end-page>
+                            </api:pagination>
+                        </api:field>
+                        <api:field display-name="Public URL" name="public-url" type="text">
+                            <api:text>https://lirias.kuleuven.be/handle/123456789/624745</api:text>
+                        </api:field>
+                        <api:field display-name="Publisher" name="publisher" type="text">
+                            <api:text>Elsevier</api:text>
+                        </api:field>
+                        <api:field display-name="Record created at source"
+                             name="record-created-at-source-date"
+                             type="date">
+                            <api:date>
+                                <api:day>21</api:day>
+                                <api:month>6</api:month>
+                                <api:year>2018</api:year>
+                            </api:date>
+                        </api:field>
+                        <api:field display-name="Record made publicly available"
+                             name="record-made-public-at-source-date"
+                             type="date">
+                            <api:date>
+                                <api:day>21</api:day>
+                                <api:month>6</api:month>
+                                <api:year>2018</api:year>
+                            </api:date>
+                        </api:field>
+                        <api:field display-name="Availability" name="repository-status" type="text">
+                            <api:text>Public</api:text>
+                        </api:field>
+                        <api:field display-name="Title" name="title" type="text">
+                            <api:text>A Single-Cell Transcriptome Atlas of the Aging Drosophila Brain</api:text>
+                        </api:field>
+                        <api:field display-name="Volume" name="volume" type="text">
+                            <api:text>174</api:text>
+                        </api:field>
+                    </api:native>
+                </api:record>
+            </api:records>
+            <api:all-labels type="keyword-list">
+                <api:keywords>
+                    <api:keyword origin="issn-inferred" scheme="for">06 Biological Sciences</api:keyword>
+                    <api:keyword origin="issn-inferred" scheme="for">11 Medical And Health Sciences</api:keyword>
+                    <api:keyword origin="issn-inferred" scheme="science-metrix">Developmental Biology</api:keyword>
+                </api:keywords>
+            </api:all-labels>
+            <api:journal href="https://lirias2.kuleuven.be:8091/secure-api/v5.5/journals/17170"
+                      issn="0092-8674">
+                <api:records>
+                    <api:record source-name="jcr">
+                        <api:title>CELL</api:title>
+                    </api:record>
+                    <api:record source-name="sherpa-romeo">
+                        <api:title>Cell</api:title>
+                    </api:record>
+                    <api:record source-name="sherpa-romeo">
+                        <api:title>Cell</api:title>
+                    </api:record>
+                    <api:record source-name="era-2010">
+                        <api:title>Cell</api:title>
+                    </api:record>
+                    <api:record source-name="era-2012">
+                        <api:title>Cell</api:title>
+                    </api:record>
+                    <api:record source-name="science-metrix">
+                        <api:title>Cell</api:title>
+                    </api:record>
+                    <api:record source-name="sjr">
+                        <api:title>Cell</api:title>
+                    </api:record>
+                    <api:record source-name="sjr">
+                        <api:title>Cell</api:title>
+                    </api:record>
+                    <api:record source-name="snip">
+                        <api:title>Cell</api:title>
+                    </api:record>
+                </api:records>
+            </api:journal>
+            <api:relationships href="https://lirias2.kuleuven.be:8091/secure-api/v5.5/publications/1990279/relationships"/>
+        </api:object>
+    </entry>
+
 </feed>

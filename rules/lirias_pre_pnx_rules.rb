@@ -24,7 +24,7 @@ begin
 if debugging
   max_updated_records = 10
   max_deleted_records = 5
-  url = 'file://mock.xml'
+  #url = 'file://mock.xml'
 end
 
 
@@ -303,7 +303,10 @@ end
       output.to_jsonfile(resolver_data, "lirias_resolver_data")
       # output.to_jsonfile(resolver_authors, "lirias_resolver_author")
 
-      #mv_resp = `mv ./#{records_dir}/*.xml ./pre_pnx_temp`
+      if debugging
+        mv_resp = `mv ./#{tmp_records_dir}/*.xml ./pre_pnx_temp`
+      end
+      
       mv_resp = `rm -r ./#{tmp_records_dir}`
       if $?.exitstatus != 0
           log("ERROR removing tmp_records_dir #{tmp_records_dir}")
