@@ -1,5 +1,7 @@
 ---
-:base_url: https://lirias2test.libis.kuleuven.be/elements-cache/rest/publications?affected-since=
-:user: john
-:password: doesNotKnow
-:last_run: '2018-02-19T09:45:12+01:00'
+:base_url: https://lirias2repo.kuleuven.be/elements-cache/rest/publications?per-page=10&affected-since=
+:base_delete_url: https://lirias2repo.kuleuven.be/elements-cache/rest/deleted/publications?per-page=10&deleted-since=
+:user: limoapi
+:password: 17v&WM5XcOAaT3Ll
+:last_run_updates: '2018-06-25T11:36:03.15+02:00'
+:last_run_deletes: '2018-06-25T16:02:00.520Z'

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OAI-PMH 
+ xmlns="http://www.openarchives.org/OAI/2.0/" 
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/ http://www.openarchives.org/OAI/2.0/OAI-PMH.xsd">
+  <%=print data, :response_date%>
+  <request>LIRIAS</request>
+  <ListRecords>
+    <record>
+      <header status="deleted">
+        <identifier><%=data[:id].first%></identifier>
+        <datestamp><%=data[:deleted].first %></datestamp>
+      </header>
+    </record>
+  </ListRecords>
+</OAI-PMH>
