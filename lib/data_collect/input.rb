@@ -87,7 +87,7 @@ class Input
               data = xml_to_hash(data)
             when 'application/xml'
             when 'text/xml'
-                          data = xml_to_hash(data)
+              data = xml_to_hash(data)
             else
               data = xml_to_hash(data)
           end
@@ -123,6 +123,8 @@ class Input
 
   private
   def xml_to_hash(data)
+    #gsub('&lt;\/', '&lt; /') outherwise wrong XML-parsing (see records lirias1729192 )
+    data = data.gsub /&lt;/, '&lt; /'
     nori = Nori.new(parser: :nokogiri, strip_namespaces: true, convert_tags_to: lambda {|tag| tag.gsub(/^@/, '_')})
     nori.parse(data)
     #JSON.parse(nori.parse(data).to_json)

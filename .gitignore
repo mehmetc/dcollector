@@ -13,6 +13,9 @@ config.yml
 /test/tmp/
 /test/version_tmp/
 /tmp/
+/records/
+/pre_pnx_temp/
+*.sh
 
 # Used by dotenv library to load environment variables.
 # .env
