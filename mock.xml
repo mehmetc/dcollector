@@ -210,7 +210,7 @@
               </api:date>
             </api:field>
             <api:field display-name="Title" name="title" type="text">
-              <api:text>Investigation of the dynamic response in a dry friction process using a rotating stick-slip tester</api:text>
+              <api:text>Investigation &amp; testing of the dynamic response in a dry friction process using a rotating stick-slip tester</api:text>
             </api:field>
             <api:field display-name="ISBN/ISSN?" name="types" type="list">
               <api:items>

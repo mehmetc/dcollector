@@ -57,10 +57,18 @@ class Input
 
   def from_https(uri, options = {})
     data = nil
-    raise "User or Password parameter not found" unless options.keys.include?(:user) && options.keys.include?(:password)
-    user = options[:user]
-    password = options[:password]
-    http_response = HTTP.basic_auth(user: user, pass: password).get(escape_uri(uri))
+    http = HTTP
+
+    if options.keys.include?(:user) && options.keys.include?(:password)
+      user = options[:user]
+      password = options[:password]
+      http = HTTP.basic_auth(user: user, pass: password)
+    else
+      @logger.warn ("User or Password parameter not found")
+    end
+
+    http_response = http.get(escape_uri(uri))
+
     case http_response.code
       when 200
         @raw = data = http_response.body.to_s

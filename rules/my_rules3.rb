@@ -28,7 +28,7 @@ begin
   end
 
 
-  output.to_file("test.erb", "#{Time.now.to_i}.tar.gz")
+  output.to_file("./templates/test.erb", "#{Time.now.to_i}.tar.gz")
   counter += 1
 rescue => e
 ensure

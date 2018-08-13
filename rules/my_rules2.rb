@@ -16,7 +16,7 @@ begin
 
     output[:id] = [Time.now.to_i.to_s]
     output[:raw] = input.raw
-    output.to_file("data.erb")
+    output.to_file("./templates/data.erb")
     log("Data loaded in #{((Time.now - timing_start) * 1000).to_i} ms")
     url = filter(data, '$..link[?(@._rel=="next")]._href').first || nil
   end
@@ -90,7 +90,7 @@ Dir.glob('./records/*.xml').each do |filename|
     end
 
     #Save to file using an ERB template
-    output.to_file("test.erb", "#{Time.now.to_i}.tar.gz")
+    output.to_file("./templates/test.erb", "#{Time.now.to_i}.tar.gz")
     log("Data loaded in #{((Time.now - timing_start) * 1000).to_i} ms")
     counter += 1
   end

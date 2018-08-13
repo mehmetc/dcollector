@@ -74,7 +74,7 @@ begin
       end
 
       #Save to file using an ERB template
-      output.to_file("test.erb")
+      output.to_file("./templates/test.erb")
       #output.to_file("test.erb", "#{Time.now.to_i}.tar.gz")
       counter += 1
     end
